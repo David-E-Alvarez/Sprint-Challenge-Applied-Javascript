@@ -9,7 +9,15 @@
 //    <div class="tab">topic here</div>
 
 const topics = document.querySelector('.topics');
-
+axios.get("https://lambda-times-backend.herokuapp.com/topics")
+.then(response => { 
+    response.data.topics.forEach(topic =>{
+        topics.append(Tab(topic))
+    })
+})
+.catch(error => {
+    console.log("the data was not returned", error)
+})
 function Tab(topic){
     const tab = document.createElement('div');
     tab.classList.add('tab');
@@ -17,12 +25,3 @@ function Tab(topic){
     return tab;
 }
 
-// axios.get("https://lambda-times-backend.herokuapp.com/topics")
-// .then(response => { 
-//     response.data.topics.forEach(topic =>{
-//         topics.append(Tab(topic))
-//     })
-// })
-// .catch(error => {
-//     console.log("the data was not returned", error)
-// })
