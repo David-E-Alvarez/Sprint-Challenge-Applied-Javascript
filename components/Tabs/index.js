@@ -17,12 +17,12 @@ function Tab(topic){
     return tab;
 }
 
-axios.get("https://lambda-times-backend.herokuapp.com/topics")
-.then(response => { 
-    response.data.topics.forEach(topic =>{
-        topics.append(Tab(topic))
-    })
-})
-.catch(error => {
-    console.log("the data was not returned", error)
-})
+// axios.get("https://lambda-times-backend.herokuapp.com/topics")
+// .then(response => { 
+//     response.data.topics.forEach(topic =>{
+//         topics.append(Tab(topic))
+//     })
+// })
+// .catch(error => {
+//     console.log("the data was not returned", error)
+// })
