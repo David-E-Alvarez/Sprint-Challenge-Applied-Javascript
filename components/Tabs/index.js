@@ -9,7 +9,7 @@
 //    <div class="tab">topic here</div>
 
 //how do i add Tab component to DOM under .topics element?
-const topic = document.querySelector('.topics');
+const topics = document.querySelector('.topics');
 
 function Tab(string){
     //element
@@ -18,16 +18,16 @@ function Tab(string){
     tab.classList.add('tab');
     //assign values to tabs by iterating through array i get from GET request promise
     tab.textContent = string;
-    console.log("tab.textContent: " + tab.textContent);
+    //console.log("tab.textContent: " + tab.textContent);
     return tab;
 }
 
 axios.get("https://lambda-times-backend.herokuapp.com/topics")
 .then(response => {
-    console.log("response.data: ",  response.data);
+    //console.log("response.data: ",  response.data);
     response.data.topics.forEach(element => {
-        console.log("element: ",element);
-        topic.append(Tab(element))
+        //console.log("element: ",element);
+        topics.append(Tab(element))
     });
 
 })
