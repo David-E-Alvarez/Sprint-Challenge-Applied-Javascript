@@ -13,8 +13,15 @@ header.append(Header());
 function Header() {
     const header = document.createElement('div');
     const date = document.createElement('span');
+    //add text to date
+    date.append("SMARCH 28, 2019");
     const title = document.createElement('h1');
+    //add text to h1
+    title.append("Lambda Times");
     const weather = document.createElement('span');
+    //add text to temp span
+    var degreeSymbol = "\xB0";
+    weather.append(`98${degreeSymbol}`);
     header.appendChild(date);
     header.appendChild(title);
     header.appendChild(weather);
